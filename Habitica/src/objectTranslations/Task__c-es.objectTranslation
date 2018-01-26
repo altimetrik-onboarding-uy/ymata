@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Award Points --></label>
+        <name>Award_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Difficulty --></label>
+        <name>Difficulty__c</name>
+        <picklistValues>
+            <masterLabel>Easy</masterLabel>
+            <translation><!-- Easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hard</masterLabel>
+            <translation><!-- Hard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trivial</masterLabel>
+            <translation><!-- Trivial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Daily Task</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Habit Task</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>TO-DO Task</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Daily --></label>
+        <name>Daily</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Habit --></label>
+        <name>Habit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TO-DO --></label>
+        <name>TO_DO</name>
+    </recordTypes>
+</CustomObjectTranslation>
