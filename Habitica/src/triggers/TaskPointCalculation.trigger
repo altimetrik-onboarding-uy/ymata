@@ -6,7 +6,7 @@ trigger TaskPointCalculation on Task__c (after insert, after update) {
             if (rt.Name == 'TO-DO') {
                 if (task.Due_Date__c != null) {
                     Integer daysBeforeDueDate = task.Due_Date__c.daysBetween(Date.today());
-                    if (daysBeforeDueDate <= 0) {                    
+                    if (daysBeforeDueDate <= 0) {   
                         employee.Total_Points_Calculated__c += task.Award_Points__c;                    
                     }
                     else {

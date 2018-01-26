@@ -2,6 +2,7 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <fullName>Total_Points_Calculated__c</fullName>
+        <defaultValue>0</defaultValue>
         <externalId>false</externalId>
         <label>Total Points Calculated</label>
         <precision>18</precision>
