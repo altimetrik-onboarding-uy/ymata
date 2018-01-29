@@ -9,6 +9,10 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
         <members>Habitica</members>
         <name>CustomApplication</name>
     </types>
