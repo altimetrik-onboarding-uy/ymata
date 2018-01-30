@@ -4,8 +4,9 @@ public class TaskPointCalculationUtil {
     static final String taskDaily = 'Daily';
     static final String taskHabit = 'Habit';
     
-    public static void updateEmployeeAwaredPoints(Task__c task, Map<Id, Task__c> oldValues, Boolean areInserted) {
-        if ((areInserted || (oldValues.get(task.Id).Status__c != task.Status__c )) && task.Status__c.equals(taskCompleted) ) {
+    public static void updateEmployeeAwaredPoints(Task__c task, Task__c oldValue, Boolean areInserted) {
+        if ((areInserted && task.Status__c.equals(taskCompleted)) || 
+           ((oldValue.Status__c != task.Status__c ) && task.Status__c.equals(taskCompleted))) {
             RecordType rt = [SELECT Name FROM RecordType WHERE Id = :task.RecordTypeId Limit 1];
             Contact employee = [select Name, Total_Points_Calculated__c from Contact where id = :task.Employee__c Limit 1];
             if (employee.Total_Points_Calculated__c == null) {
