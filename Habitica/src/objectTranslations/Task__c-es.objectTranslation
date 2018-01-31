@@ -46,6 +46,10 @@
         <relationshipLabel><!-- Tasks --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- RecordTypeName --></label>
+        <name>RecordTypeName__c</name>
+    </fields>
+    <fields>
         <label><!-- Status --></label>
         <name>Status__c</name>
         <picklistValues>

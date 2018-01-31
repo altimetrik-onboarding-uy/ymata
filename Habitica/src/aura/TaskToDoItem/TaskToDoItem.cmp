@@ -1,0 +1,52 @@
+<aura:component >    
+    <aura:attribute name="item" type="Task__c"/>
+    <aura:attribute name="dateToday" type="Date"/>
+	    
+    <aura:registerEvent name="showTaskUpdateWindow" type="c:UpdateTaskEvent"/>  
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    
+    <article class="slds-card slds-card_boundary">
+        <div class="slds-card__header slds-grid">
+            <header class="task-header-text slds-media slds-media_center slds-has-flexi-truncate">
+                <a href="#" class="slds-text-heading_small">{!v.item.Name}</a>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">	
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_4-of-12">
+                    <span><b>Status: </b></span>
+                </div>
+                <div class="slds-col slds-size_8-of-12">
+                    <span>{!v.item.Status__c}</span>
+                </div>                
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_4-of-12">
+                    <span><b>Difficulty: </b></span>
+                </div>
+                <div class="slds-col slds-size_8-of-12">
+                    <span>{!v.item.Difficulty__c}</span>
+                </div>                
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_4-of-12">
+                    <span><b>Award Points: </b></span>
+                </div>
+                <div class="slds-col slds-size_8-of-12">
+                    <span>{!v.item.Award_Points__c}</span>
+                </div>                
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_4-of-12">
+                    <span><b>Due Date: </b></span>
+                </div>
+                <div class="slds-col slds-size_8-of-12">
+                    <ui:outputDate value="{!v.item.Due_Date__c}" format="dd/MM/yyyy" class="{!lessthan(v.item.Due_Date__c, v.dateToday) ? 'slds-text-color_error' : ''}"/>
+                </div>                
+            </div>                                                                
+        </div> 
+        <footer class="slds-card__footer slds-align_absolute-left">
+            <a href="javascript:void(0)" onclick="{!c.fireEventOpenTaskUpdateWindow}">Update</a>
+        </footer>
+    </article>              
+</aura:component>
