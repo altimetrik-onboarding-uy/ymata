@@ -1,9 +1,0 @@
-<aura:component controller="ManageEmployeeTaskController">
-	<aura:attribute name="tasksToDo" type="Task__c[]"/>                   
-    
-    <aura:iteration items="{!v.tasksToDo}" var="item">
-        <aura:if isTrue="{!notequals(item.Status__c, 'Completed')}">
-        	<c:TaskToDoItem item="{!item}"/>
-        </aura:if>        
-    </aura:iteration>        
-</aura:component>

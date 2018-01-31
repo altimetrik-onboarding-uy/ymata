@@ -1,6 +1,0 @@
-<aura:component >
-	<aura:attribute name="tasksHabit" type="Task__c[]"/>                   
-    <aura:iteration items="{!v.tasksHabit}" var="item">
-        <c:TaskHabitItem item="{!item}"/>      
-    </aura:iteration>        
-</aura:component>

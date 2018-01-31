@@ -1,8 +1,0 @@
-<aura:component >
-	<aura:attribute name="tasksDaily" type="Task__c[]"/>                   
-    <aura:iteration items="{!v.tasksDaily}" var="item">
-        <aura:if isTrue="{!notequals(item.Status__c, 'Completed')}">
-        	<c:TaskDailyItem item="{!item}"/>
-        </aura:if>        
-    </aura:iteration>        
-</aura:component>
