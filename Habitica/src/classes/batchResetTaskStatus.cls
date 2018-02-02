@@ -46,7 +46,7 @@ global class batchResetTaskStatus implements Database.Batchable<sObject>, Databa
             if (!String.isBlank(employee.Email)) {                
                 Messaging.singleEmailMessage message = new Messaging.singleEmailMessage();
                 message.toAddresses = new String[] { employee.Email };
-                message.subject = 'Incompleted Daily tasks on the Habitica Web Site';
+                message.subject = 'Uncompleted Daily tasks on the Habitica Web Site';
                 String htmlBody = '<body><h3>Uncompleted tasks:</h3><hr><ul>';                       
                 for (Task__c task : employeeTasksUncompleted.get(employeeId)) {
                     String baseUrl = System.URL.getSalesforceBaseUrl().toExternalForm() + '/' + task.Id;
