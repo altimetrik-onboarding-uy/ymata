@@ -25,7 +25,11 @@ public with sharing class ManageEmployeeTaskController {
     
     @AuraEnabled
     public static Task__c updateTask(Task__c task) {
-        update task;
+        try{
+            update task;            
+        } catch (DMLException e){              
+            throw new AuraHandledException('There was a problem updating the task');
+        }        
         return task;
     }
 }

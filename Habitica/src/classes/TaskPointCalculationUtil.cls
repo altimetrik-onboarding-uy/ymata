@@ -26,8 +26,11 @@ public class TaskPointCalculationUtil {
                 employee.Total_Points_Calculated__c -= task.Award_Points__c;
             }
         }
-        
-        update employee;                
+        try{
+            update employee;            
+        } catch (DMLException e){              
+            System.debug('There was a problem updating the employees points');
+        }                        
     }
     
     private static void updateEmployeeAwardedPointsTaskToDo(Task__c task, Contact employee) {
