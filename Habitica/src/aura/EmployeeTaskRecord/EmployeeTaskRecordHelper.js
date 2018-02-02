@@ -36,6 +36,15 @@
                 });
                 toastEvent.fire();
             }
+            else if (state === "ERROR") {
+                var toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({
+                    "title": "Error!",
+                    "message": "There was a problem updating the task.",
+                    "type": "error",
+                });
+                toastEvent.fire();
+            }
         });
         $A.enqueueAction(action);
     }
