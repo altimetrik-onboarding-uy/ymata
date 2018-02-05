@@ -10,6 +10,7 @@
             dayDigit = '0' + dayDigit;
         }
         component.set('v.dateToday', today.getFullYear() + "-" + monthDigit + "-" + dayDigit);
+        component.set('v.baseURL', window.location.origin + '/' + component.get("v.item.Id"));
     },
     
     fireEventOpenTaskUpdateWindow: function(component, event, helper) {

@@ -18,7 +18,7 @@ global class batchResetTaskStatus implements Database.Batchable<sObject>, Databa
         {
             List<Task__c> tasksUncompletedList = new List<Task__c>();
             for(Task__c task : employee.Tasks__r) {
-                if ((task.Status__c == 'New' || task.Status__c == 'In Progress') & task.RecordTypeName__c == 'Daily') {
+                if ((task.Status__c == 'New' || task.Status__c == 'In Progress') && task.RecordTypeName__c == 'Daily') {
                     tasksUncompletedList.add(task);
                 }                
                 task.Status__c = 'New';
@@ -65,7 +65,6 @@ global class batchResetTaskStatus implements Database.Batchable<sObject>, Databa
         
         if(mails.size() > 0) {
             Messaging.SendEmailResult[] results = Messaging.sendEmail(mails);
-            System.debug(results);
         }        
     }
 }
