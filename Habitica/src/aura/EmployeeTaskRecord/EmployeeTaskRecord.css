@@ -1,0 +1,16 @@
+.THIS .tasks-container {
+    height: auto;  
+    background: rgb(244, 246, 249); 
+    padding: 0.5rem;
+}
+
+.THIS .tasks-list-container {
+    padding: 0.3rem;
+}
+
+.THIS .list-tasks-list-header__title {
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
