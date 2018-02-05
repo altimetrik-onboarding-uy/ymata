@@ -324,6 +324,7 @@
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Difficulty__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Award_Points__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Employee__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

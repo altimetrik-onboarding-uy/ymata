@@ -1,9 +1,8 @@
 <aura:component >
 	<aura:attribute name="isOpen" type="boolean" default="false"/>
     <aura:attribute name="taskItem" type="Task__c"/>
-    <aura:attribute name="options" type="List" />
-    <aura:attribute name="selectedStatus" type="String" default="{!v.taskItem.Status__c}"/>
-    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}"/> 
+    <aura:attribute name="taskStatusList" type="String[]" />
+    <aura:attribute name="selectedStatus" type="String" default="{!v.taskItem.Status__c}"/> 
     
     <aura:registerEvent name="updatedTaskStatus" type="c:UpdateTaskEvent"/>
     
@@ -24,8 +23,8 @@
                 <div class="slds-modal__content slds-p-around_medium" style="height:150px;">
                     <!-- Init form -->
                     <lightning:select name="status" label="Status:" aura:id="status" value="{!v.selectedStatus}">
-                        <aura:iteration items="{!v.options}" var="item">
-                            <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}"/>
+                        <aura:iteration items="{!v.taskStatusList}" var="item">
+                            <option text="{!item.label}" value="{!item.value}"/>
                         </aura:iteration>
                     </lightning:select>
                     <!-- End form -->

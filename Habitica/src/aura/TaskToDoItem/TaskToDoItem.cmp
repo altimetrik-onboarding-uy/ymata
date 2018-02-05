@@ -1,6 +1,7 @@
 <aura:component >    
     <aura:attribute name="item" type="Task__c"/>
     <aura:attribute name="dateToday" type="Date"/>
+    <aura:attribute name="baseURL" type="String"/>
 	    
     <aura:registerEvent name="showTaskUpdateWindow" type="c:UpdateTaskEvent"/>  
     <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
@@ -8,8 +9,8 @@
     <article class="slds-card slds-card_boundary">
         <div class="slds-card__header slds-grid">
             <header class="task-header-text slds-media slds-media_center slds-has-flexi-truncate">
-                <a href="#" class="slds-text-heading_small">{!v.item.Name}</a>
-            </header>
+                <ui:outputURL value="{!v.baseURL}" label="{!v.item.Name}" class="slds-text-heading_small" target="_blank"/>
+            </header>            
         </div>
         <div class="slds-card__body slds-card__body_inner">	
             <div class="slds-grid slds-gutters">

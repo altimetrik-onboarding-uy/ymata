@@ -47,5 +47,71 @@
             }
         });
         $A.enqueueAction(action);
-    }
+    },
+    
+    fetchPickListVal: function(component, fieldName) {
+        var action = component.get("c.getSelectOptions");
+        action.setParams({
+            "objObject": component.get("v.objInfo"),
+            "fld": fieldName
+        });
+        var opts = [];
+        action.setCallback(this, function(response) {
+            if (response.getState() == "SUCCESS") {
+                var allValues = response.getReturnValue();
+                
+                for (var i = 0; i < allValues.length; i++) {
+                    opts.push({
+                        class: "optionClass",
+                        label: allValues[i],
+                        value: allValues[i]
+                    });
+                }
+                component.set("v.taskStatusList", opts);
+            }
+        });
+        $A.enqueueAction(action);
+    },
+    
+    loadTasksToDo: function(component) {
+        var actionToDo = component.get("c.getEmployeeToDoTasks");
+        actionToDo.setParams({
+            "employeeId": component.get("v.recordId")
+        });
+        actionToDo.setCallback(this, function(response){            
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.tasksToDo", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(actionToDo);
+    },
+    
+    loadTasksDaily: function(component) {
+        var actionDaily = component.get("c.getEmployeeDailyTasks");
+        actionDaily.setParams({
+            "employeeId": component.get("v.recordId")
+        });
+        actionDaily.setCallback(this, function(response){            
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.tasksDaily", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(actionDaily);
+    },
+    
+    loadTasksHabit: function(component) {
+        var actionHabit = component.get("c.getEmployeeHabitTasks");
+        actionHabit.setParams({
+            "employeeId": component.get("v.recordId")
+        });
+        actionHabit.setCallback(this, function(response){            
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.tasksHabit", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(actionHabit);
+    },
 })

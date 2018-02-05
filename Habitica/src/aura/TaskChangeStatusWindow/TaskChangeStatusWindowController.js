@@ -16,13 +16,4 @@
         updatedTaskToDoStatus.fire();
         component.set("v.isOpen", false);
     },
-    
-    loadOptions: function (component, event, helper) {
-        var opts = [
-            { value: "New", label: "New" },
-            { value: "In Progress", label: "In Progress" },
-            { value: "Completed", label: "Completed" }
-         ];
-         component.set("v.options", opts);
-    },
 })

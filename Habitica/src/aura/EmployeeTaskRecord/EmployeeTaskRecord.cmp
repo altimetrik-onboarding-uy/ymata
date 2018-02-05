@@ -1,10 +1,12 @@
 <aura:component controller="ManageEmployeeTaskController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
-    <aura:attribute name="record" type="Object"/>
-    <aura:attribute name="employeeRecord" type="Object"/>
+    <aura:attribute name="record" type="Contact"/>
+    <aura:attribute name="employeeRecord" type="Contact"/>
     <aura:attribute name="recordError" type="String"/>
     <aura:attribute name="tasksToDo" type="Task__c[]"/>
     <aura:attribute name="tasksDaily" type="Task__c[]"/>
     <aura:attribute name="tasksHabit" type="Task__c[]"/>
+    <aura:attribute name="objInfo" type="Task__c" default="{sobjectType : 'Task__c'}" />
+	<aura:attribute name="taskStatusList" type="String[]"/>
     
     <aura:attribute name="openWindowTaskUpdate" type="boolean" default="false"/>
     <aura:attribute name="updateTaskItem" type="Task__c" default="null"/>
@@ -24,7 +26,6 @@
 		targetFields="{!v.employeeRecord}"
 		targetError="{!v.recordError}"
      />
-    
 	<div class="slds-grid slds-gutters">
 		<div class="slds-col">
 			<div class="tasks-container slds-grid">
@@ -66,5 +67,5 @@
 			</div>
 		</div>
 	</div>
-    <c:TaskChangeStatusWindow isOpen="{!v.openWindowTaskUpdate}" taskItem="{!v.updateTaskItem}"/>
+    <c:TaskChangeStatusWindow isOpen="{!v.openWindowTaskUpdate}" taskItem="{!v.updateTaskItem}" taskStatusList="{!v.taskStatusList}"/>
 </aura:component>
