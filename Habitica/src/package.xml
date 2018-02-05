@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Habitica</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Contact.Total_Points_Calculated__c</members>
+        <members>Contact.Total_Points_Earned__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Task</members>
+        <members>Task__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Contact-Contact Layout</members>
+        <members>Task__c-Daily Task</members>
+        <members>Task__c-Habit Task</members>
+        <members>Task__c-TO-DO Task</members>
+        <name>Layout</name>
+    </types>
+    <version>36.0</version>
+</Package>
